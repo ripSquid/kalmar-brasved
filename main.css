@@ -8,6 +8,19 @@
 
 body {
   background-image: url("wood.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+html {
+  font-size: 1em;
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 0.745em;
+  }
 }
 
 header {
@@ -18,15 +31,14 @@ header {
   height: 10vh;
   
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  align-content: stretch;
 }
 
 .header_item {
   padding-left: 1.5vw;
   padding-right: 1.5vw;
+  font-size: 1.5em;
   text-align: center;
-  width: 5.05vw;
   height: 10vh;
   display: flex;
   align-items: center;
@@ -44,9 +56,14 @@ img.header_item {
   height: 10vh;
 }
 
+a.header_item {
+  flex-grow: 1;
+}
+
 a:visited.header_item {
   color: black;
   font-family: 'Roboto', sans-serif;
+  flex-grow: 1;
 }
 
 a#thispage {
@@ -60,7 +77,7 @@ a:visited#thispage {
 h1.content_item{
   color: white;
   font-family: 'Work Sans', sans-serif;
-  font-size: 100px;
+  font-size: 6.25rem;
   text-shadow: 2px 2px 5px black;
 }
 
