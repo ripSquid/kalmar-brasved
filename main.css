@@ -218,10 +218,8 @@ h1.content_item#linetwo {
 
 #content_box {
   position: relative;
-  background-color: #404040;
   width: 100%;
   height: 33.8vh;
-  box-shadow: 0 0 5vh black;
   z-index: -40;
 }
 
