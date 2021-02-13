@@ -6,6 +6,22 @@
   margin: 0;
 }
 
+@media screen and (min-width: 800px) {
+  #mobile_content {
+    position: fixed;
+    visibility:hidden;
+    z-index: -80;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #desktop_content {
+    position: fixed;
+    visibility:hidden;
+    z-index: -80;
+  }
+}
+
 body {
   background-image: url("wood.jpg");
   background-position: center;
@@ -95,4 +111,60 @@ h1.content_item#linetwo {
   width: 100%;
   height: 46vh;
   box-shadow: 0 -3px 3vh;
+}
+
+.hamburger {
+  width: 14.6vw;
+  height: 14.6vw;
+  padding: 2vw 2vw 2vw 2vw;
+
+  position: fixed;
+  right: 0;
+  bottom: 0;
+
+  background-color: white;
+
+  border-radius: 25% 0 0 0;
+  /*
+  border-width: 1px;
+  border-style:solid;
+  */
+
+  box-shadow: -1px -1px 5px black;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name_holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#mobile_lineone {
+  padding-left: 4vw;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 3rem;
+  line-height: 90%;
+}
+
+#mobile_linetwo {
+  padding-left: 7vw;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 3rem;
+  line-height: 90%;
+}
+
+#mobile_spacer {
+  width: 100vw;
+  height: 20vh;
+}
+
+#content {
+  background-color: white;
+  width: 100vw;
+  height: 70vh;
+  box-shadow: 0 3px 3vh;
 }
