@@ -12,7 +12,8 @@
   </style>
   <script>
     function toggleMenu() {
-      alert(1)
+      document.getElementById("menu").classList.toggle("show");
+      document.getElementById("menu_btn").classList.toggle("pressed");
     }
   </script>
   <title>Kalmar Brasved</title>
@@ -48,7 +49,12 @@
     <div id="mobile_spacer"></div>
     <div id="content"></div>
     <a href="javascript:void(0);" onclick="toggleMenu()">
-      <img class="hamburger" src="menu.svg" alt="menu">
+      <img id="menu_btn" class="hamburger" src="menu.svg" alt="menu">
+      <div id="menu" class="menu_content">
+        <a class="header_item" href="">Priser</a>
+        <a class="header_item" href="">Kontakta Oss</a>
+        <a class="header_item" href="">Om oss</a>
+      </div>
     </a>
   </div>
   <link rel="stylesheet" href="main.css">
