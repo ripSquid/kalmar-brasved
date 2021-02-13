@@ -24,11 +24,6 @@
     visibility:hidden;
     z-index: -80;
   }
-  .header_item{
-    position: relative;
-    top: 20%;
-    left: 50%;
-  }
 }
 
 @media screen and (max-width: 800px) {
