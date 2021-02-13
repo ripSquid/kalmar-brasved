@@ -21,6 +21,32 @@ html {
   html {
     font-size: 0.745em;
   }
+  header {
+    opacity: 0;
+    display: initial;
+    position: sticky;
+    width: 50px;
+    top: 90vh;
+    border: 1px solid red;
+    padding: 10px;
+  }
+  .header_item {
+    opacity: 0;
+  }
+  menu {
+    opacity: 1;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    background-color: white;
+    align-content: center;
+    border: 10px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 1vh;
+  }
 }
 
 header {
@@ -32,6 +58,43 @@ header {
   
   display: flex;
   align-content: stretch;
+}
+
+menu{
+  opacity: 0.5;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  height: 50px;
+  width: 50px;
+  margin: 10px;
+  background-color: white;
+  align-content: center;
+  border: 10px solid white;
+  border-radius: 10px;
+  box-shadow: 0 0 1vh;
+}
+.menu_item{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  animation-name: m_downlight;
+  animation-duration: 100ms;
+}
+.menu_item:hover{
+  animation-name: m_highlight;
+  animation-duration: 100ms;
+  transform: rotate(90deg);
+}
+@keyframes m_highlight{
+  from {transform: rotate(0deg);}
+  to   {transform: rotate(90deg);}
+}
+@keyframes m_downlight{
+  from {transform: rotate(90deg);}
+  to   {transform: rotate(0deg);}
 }
 
 .header_item {
