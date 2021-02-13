@@ -20,6 +20,7 @@
 @media screen and (min-width: 800px) {
   #mobile_content {
     position: fixed;
+    top: -200vh;
     visibility:hidden;
     z-index: -80;
   }
@@ -33,6 +34,7 @@
 @media screen and (max-width: 800px) {
   #desktop_content {
     position: fixed;
+    top: -200vh;
     visibility:hidden;
     z-index: -80;
   }
@@ -216,7 +218,7 @@ h1.content_item#linetwo {
   height: 20vh;
 }
 
-#content {
+#content_mobile {
   background-color: white;
   width: 100vw;
   height: 70vh;
