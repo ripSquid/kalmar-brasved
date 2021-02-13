@@ -82,6 +82,8 @@ header {
   box-shadow: 0 -3px 3vh;
   width: 100%;
   height: 10vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
   top: 0;
   
   display: flex;
