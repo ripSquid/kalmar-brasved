@@ -14,6 +14,13 @@
     function toggleMenu() {
       document.getElementById("menu").classList.toggle("show");
       document.getElementById("menu_btn").classList.toggle("pressed");
+      if(document.getElementById("menu").classList.contains("show")){
+        document.getElementById("menu").classList.remove("hide")
+      }
+      else
+      {
+        document.getElementById("menu").classList.add("hide")
+      }
     }
   </script>
   <title>Kalmar Brasved</title>
@@ -29,10 +36,12 @@
       <a class="header_item" href="om_oss.html">Om oss</a>
     </header>
     <div id="content">
-      <h1 class="content_item" id="lineone">Kalmar </h1>
-      <h1 class="content_item" id="linetwo">Brasved</h1>
+      <h1 class="content_item" id="lineone">KALMAR</h1>
+      <h1 class="content_item" id="linetwo">BRASVED</h1>
       <div id="content_box">
-
+          <div id="content_textbox">
+              <h3 class="content_text">Småländskt prima björkved</h3>
+          </div>
       </div>
     </div>
   </div>
@@ -53,6 +62,7 @@
     </a>
     <div id="menu" class="menu_content">
       <h2 class="menu_title">Kalmar Brasved</h2>
+      <a class="header_item" id="thispage" href="#">Hem</a>
       <a class="header_item" href="">Priser</a>
       <a class="header_item" href="">Kontakta Oss</a>
       <a class="header_item" href="">Om oss</a>

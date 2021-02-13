@@ -2,6 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+@keyframes header_init{
+  from {top: 0; height: 0%;}
+  to   {top: 0; height: -200vh;}
+}
+
+@keyframes title_intro{
+  from {top: -20vh; opacity: 0;}
+  to   {top: 0; opacity: 1;}
+}
+
+@keyframes header_content_init{
+  from {top: 0; opacity: 0;}
+  to   {top: 0; opacity: 1;}
+}
+
 @keyframes menu_highlight{
   from {transform: rotate(0deg);  border-radius: 25% 0 0 0;}
   to   {transform: rotate(90deg); border-radius: 0 0 0 25%;}
@@ -15,6 +30,12 @@
 @keyframes menu_popup{
   from {border-radius: 100% 0 0 0; right: 0; width: 100%; height: 0%; }
   to   {height: 100%; border-radius: 0;}
+}
+
+@keyframes menu_popdown{
+  0%   {height: 100%; width: 100%; border-radius: 0; display: block;}
+  99%  {border-radius: 100% 0 0 0; right: 0; width: 100%; height: 0%; display: block;}
+  100% {display: none;}
 }
 
 @media screen and (min-width: 800px) {
@@ -40,6 +61,34 @@
   margin: 0;
 }
 
+/*global element settings*/
+html {
+  font-size: 1em;
+}
+
+body {
+  background-image: url("wood.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  z-index: 1;
+  animation-name: header_init;
+  animation-duration: 300ms;
+  position: sticky;
+  background-color: white;
+  box-shadow: 0 -3px 3vh;
+  width: 100%;
+  height: 10vh;
+  top: 0;
+  
+  display: flex;
+  align-content: stretch;
+}
+
+/*hamburger (mobile menu button)*/
 .hamburger {
   animation-name: menu_downlight;
   animation-duration: 100ms;
@@ -53,13 +102,7 @@
   bottom: 0;
 
   background-color: white;
-
   border-radius: 25% 0 0 0;
-  /*
-  border-width: 1px;
-  border-style:solid;
-  */
-
   box-shadow: -1px -1px 5px black;
   
   display: flex;
@@ -74,8 +117,8 @@
   transform: rotate(90deg);
   border-radius: 0 0 0 25%;
 }
+
 .menu_content {
-  display: none;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -84,38 +127,22 @@
   background-color: #f1f1f1;
   z-index: 1;
   border-radius: 50% 0 0 0;
+  display: none;
 }
 
-.show {display: block;}
+#menu.hide{
+  display: none;
+  animation-name: menu_popdown;
+  animation-duration: 500ms;
+  box-shadow: 0 0 3vh black;
+}
 
 #menu.show{
   animation-name: menu_popup;
   animation-duration: 500ms;
   box-shadow: 0 0 3vh black;
-  bottom: 0;
   border-radius: 0;
-}
-
-body {
-  background-image: url("wood.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-html {
-  font-size: 1em;
-}
-
-header {
-  position: sticky;
-  background-color: white;
-  box-shadow: 0 -3px 3vh;
-  width: 100%;
-  height: 10vh;
-  
-  display: flex;
-  align-content: stretch;
+  display: initial;
 }
 
 .menu_title{
@@ -124,7 +151,10 @@ header {
   font-size: 4rem;
   text-align: center;
 }
+
 .header_item {
+  animation-name: header_content_init;
+  animation-duration: 500ms;
   padding-left: 1.5vw;
   padding-right: 1.5vw;
   font-size: 1.5em;
@@ -153,7 +183,7 @@ a.header_item {
 
 a:visited.header_item {
   color: black;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   flex-grow: 1;
 }
 
@@ -166,26 +196,63 @@ a:visited#thispage {
 }
 
 h1.content_item{
+  position: relative;
   color: white;
   font-family: 'Work Sans', sans-serif;
   font-size: 6.25rem;
-  text-shadow: 2px 2px 5px black;
+  text-shadow: 1px 1px 5px black;
 }
 
 h1.content_item#lineone {
+  animation-name: title_intro;
+  animation-duration: 1s;
   margin-top: 2vh;
   margin-left: 2vw;
 }
 h1.content_item#linetwo {
+  animation-name: title_intro;
+  animation-duration: 1.2s;
   margin-left: 5vw;
-  margin-bottom: 18vh;
+  margin-bottom: 30vh;
 }
 
 #content_box {
-  background-color: white;
+  position: relative;
+  background-color: #404040;
   width: 100%;
-  height: 46vh;
+  height: 33.8vh;
+  box-shadow: 0 0 5vh black;
+  z-index: -40;
+}
+
+#content_textbox {
+  position: inherit;
+  top: -10vh;
+  background-color: white;
+  border-radius: 10vh 10vh 0 0;
+  margin: auto;
+  width: 90%;
+  height: 43.8vh;
   box-shadow: 0 -3px 3vh;
+  z-index: -30;
+}
+
+.content_text{
+  position: relative;
+  right: -5vw;
+  top: 5vh;
+  font-size: 4.6rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+
+}
+.content_image{
+  position: relative;
+  right: -5vw;
+  top: 5vh;
+  width: 20vh;
+  height: 20vh;
+  box-shadow: 0, 0, 3, black;
 }
 
 .name_holder {
